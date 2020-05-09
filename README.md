@@ -4,7 +4,7 @@ Docker image for fhem.
 # Usage
 ```Docker
 docker create \
-  --name=dnsmasq \
+  --name=fhem \
   -e TIMEZONE=<<TIMEZONE|default(UTC)>> \
   -e FHEM_VERSION=<<TIMEZONE|default(6.0)>> \
   -p 8083:8083 \
