@@ -1,0 +1,6 @@
+#! /bin/sh
+
+echo "${TIMEZONE}" > /etc/timezone
+
+cd /opt/fhem
+perl fhem.pl /etc/fhem.cfg
