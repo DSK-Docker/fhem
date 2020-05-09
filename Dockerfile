@@ -19,8 +19,8 @@ RUN \
     perl-io-socket-ssl \
     perl-device-serialport \
     perl-xml-simple \
-    perl-html-parser \
-    perl-html-tableextract
+    perl-html-tableextract \
+    perl-lwp-protocol-https
 
 ####################################################
 ######### INSTALLING FHEM                ###########
