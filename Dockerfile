@@ -12,13 +12,15 @@ ENV FHEM_VERSION=6.0
 ######### INSTALLING BASE STUFF          ###########
 ####################################################
 RUN \
+  echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
   apk add --no-cache \
     tzdata \
     perl-json \
     perl-io-socket-ssl \
     perl-device-serialport \
     perl-xml-simple \
-    perl-html-parser
+    perl-html-parser \
+    perl-html-tableextract
 
 ####################################################
 ######### INSTALLING FHEM                ###########
