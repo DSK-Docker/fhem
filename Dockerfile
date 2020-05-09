@@ -28,7 +28,7 @@ RUN \
   wget http://fhem.de/fhem-${FHEM_VERSION}.tar.gz && \
   tar -xzf fhem-${FHEM_VERSION}.tar.gz -C /opt && \
   mv /opt/fhem-${FHEM_VERSION} /opt/fhem && \
-  cat /opt/fhem/fhem.cfg | sed -e s'/attr global logfile \.\/log\/fhem-%Y-%m.log/attr global logfile -/' > /etc/fhem.cfg
+  cat /opt/fhem/fhem.cfg | sed -e s'/attr global logfile \.\/log\/fhem-%Y-%m.log/attr global logfile \.\/log\/fhem.log/' > /etc/fhem.cfg
 
 ####################################################
 ######### SETUP FILES & FOLDERS          ###########

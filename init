@@ -4,3 +4,4 @@ echo "${TIMEZONE}" > /etc/timezone
 
 cd /opt/fhem
 perl fhem.pl /etc/fhem.cfg
+tail -f /opt/fhem/log/fhem.log
