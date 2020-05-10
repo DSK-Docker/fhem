@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM debian:latest
 
 LABEL maintainer="Dschinghis Kahn"
 
@@ -12,15 +12,17 @@ ENV FHEM_VERSION=6.0
 ######### INSTALLING BASE STUFF          ###########
 ####################################################
 RUN \
-  echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-  apk add --no-cache \
+  apt-get update && \
+  apt-get install -y \
     tzdata \
-    perl-json \
-    perl-io-socket-ssl \
-    perl-device-serialport \
-    perl-xml-simple \
-    perl-html-tableextract \
-    perl-lwp-protocol-https
+    wget \
+    libjson-perl \
+    libio-socket-ssl-perl \
+    libdevice-serialport-perl \
+    libxml-simple-perl \
+    libhtml-tableextract-perl \
+    liblwp-protocol-https-perl \
+    librpc-xml-perl
 
 ####################################################
 ######### INSTALLING FHEM                ###########
