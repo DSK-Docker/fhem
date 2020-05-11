@@ -5,4 +5,16 @@ echo "${TIMEZONE}" > /etc/timezone
 
 cd /opt/fhem
 perl fhem.pl /etc/fhem.cfg
-tail --follow /opt/fhem/log/fhem.log
+tail --follow /opt/fhem/log/fhem.log &
+
+#sleep 10
+
+perl fhem.pl 7072 "update add https://raw.githubusercontent.com/jowiemann/DBPlan-for-Fhem/master/controls_dbplan.txt"
+perl fhem.pl 7072 "update"
+
+#sleep 60
+
+perl fhem.pl 7072 "shutdown restart"
+
+wait
+
