@@ -1,7 +1,8 @@
 #! /bin/sh
 
+ln --force --no-dereference --symbolic /usr/share/zoneinfo/"${TIMEZONE}" /etc/localtime
 echo "${TIMEZONE}" > /etc/timezone
 
 cd /opt/fhem
 perl fhem.pl /etc/fhem.cfg
-tail -f /opt/fhem/log/fhem.log
+tail --follow /opt/fhem/log/fhem.log
