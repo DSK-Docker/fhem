@@ -33,7 +33,8 @@ RUN \
   tar -xzf fhem-${FHEM_VERSION}.tar.gz -C /opt && \
   mv /opt/fhem-${FHEM_VERSION} /opt/fhem && \
   cat /opt/fhem/fhem.cfg | sed -e s'/attr global logfile \.\/log\/fhem-%Y-%m.log/attr global logfile \.\/log\/fhem.log/' > /etc/fhem.cfg && \
-  echo "define telnetPort telnet 7072 global" >> /etc/fhem.cfg
+  echo "define telnetPort telnet 7072 global" >> /etc/fhem.cfg && \
+  cp /etc/fhem.cfg /opt/fhem/update.cfg
 
 ####################################################
 ######### SETUP FILES & FOLDERS          ###########

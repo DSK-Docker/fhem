@@ -4,7 +4,7 @@ ln --force --no-dereference --symbolic /usr/share/zoneinfo/"${TIMEZONE}" /etc/lo
 echo "${TIMEZONE}" > /etc/timezone
 
 cd /opt/fhem
-perl fhem.pl /etc/fhem.cfg
+perl fhem.pl /opt/fhem/update.cfg
 tail --follow /opt/fhem/log/fhem.log &
 
 #sleep 10
@@ -14,7 +14,8 @@ perl fhem.pl 7072 "update"
 
 #sleep 60
 
-perl fhem.pl 7072 "shutdown restart"
+perl fhem.pl 7072 "shutdown"
+perl fhem.pl /etc/fhem.cfg
 
 wait
 
