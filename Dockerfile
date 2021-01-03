@@ -47,4 +47,6 @@ RUN rm -rf /tmp/* /root/.cache
 
 EXPOSE 8083/TCP
 
+HEALTHCHECK CMD nc -z localhost 8083 || exit 1
+
 CMD ["/init"]
