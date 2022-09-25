@@ -1,4 +1,4 @@
-FROM debian:11.3
+FROM debian:11.5
 
 LABEL maintainer="Dschinghis Kahn"
 
