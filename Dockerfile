@@ -1,4 +1,4 @@
-FROM debian:12.13
+FROM debian:12.14
 
 LABEL maintainer="Dschinghis Kahn"
 
